@@ -16,6 +16,20 @@
   </head>
   <body>
 
+    <div class="calendar">
+      <ul class="calendar__days"></ul>
+    </div>
+
+    <!-- handlebars - template -->
+    <script id="calendar__month-template" type="text/x-handlebars-template">
+      <h1 class="calendar__month">{{month}}</h1>
+    </script>
+
+    <script id="calendar__days-template" type="text/x-handlebars-template">
+      <li class="calendar__day" data-date="{{YYYY}}-{{MM}}-{{DD}}">{{day}} {{month}} <span class="calendar__holiday"></span></li>
+    </script>
+    <!-- /handlebars - template -->
+
     <!-- add script.js -->
     <script src="js/script.js" charset="utf-8"></script>
   </body>

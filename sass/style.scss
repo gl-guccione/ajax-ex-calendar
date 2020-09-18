@@ -19,6 +19,17 @@
 
 // ELEMENTS
 
+.holiday {
+  color: red;
+}
+
+.calendar {
+  width: 500px;
+  margin: 0 auto;
+  &__holiday {
+    color: red;
+  }
+}
 
 
 // STYLE

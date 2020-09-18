@@ -4,4 +4,17 @@
   padding: 0;
 }
 
+.holiday {
+  color: red;
+}
+
+.calendar {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.calendar__holiday {
+  color: red;
+}
+
 /*# sourceMappingURL=style.css.map */
