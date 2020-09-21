@@ -17,14 +17,15 @@
   <body>
 
     <div class="calendar">
+      <div class="buttons">
+        <span class="prev">prev</span>
+        <span class="succ">succ</span>
+      </div>
+      <h1></h1>
       <ul class="calendar__days"></ul>
     </div>
 
     <!-- handlebars - template -->
-    <script id="calendar__month-template" type="text/x-handlebars-template">
-      <h1 class="calendar__month">{{month}}</h1>
-    </script>
-
     <script id="calendar__days-template" type="text/x-handlebars-template">
       <li class="calendar__day" data-date="{{YYYY}}-{{MM}}-{{DD}}">{{day}} {{month}} <span class="calendar__holiday"></span></li>
     </script>

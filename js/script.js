@@ -11,16 +11,8 @@
 // print all the days in the month of jenuary
 
 function printCalendar(holidays, date) {
-  var source = $("#calendar__month-template").html();
-  var template = Handlebars.compile(source);
 
-  var context = {
-    "month": date.format('MMMM'),
-  };
-
-  var html = template(context);
-  $(".calendar").prepend(html);
-
+  $("h1").text(date.format("MMMM YYYY"));
 
   var source = $("#calendar__days-template").html();
   var template = Handlebars.compile(source);
@@ -47,24 +39,17 @@ function printCalendar(holidays, date) {
   }
 };
 
+function getHolydays(date) {
 
-$(document).ready(function () {
-
-  var date = moment("2018-01-01");
-
-  var monthUser = parseInt(prompt("Inserisci un mese da 1 a 12")) - 1;
-  date.month(monthUser);
-
-  var monthDate = date.get("month");
-  var yearDate = date.get("year");
-
+  var month = date.get("month");
+  var year = date.get("year");
 
   $.ajax(
     {
       "url": "https://flynn.boolean.careers/exercises/api/holidays",
       "data": {
-        "year": yearDate,
-        "month": monthDate,
+        "year": year,
+        "month": month,
       },
       "method": "GET",
       "success": function (data, state) {
@@ -75,4 +60,17 @@ $(document).ready(function () {
       }
     }
   );
+}
+
+
+$(document).ready(function () {
+
+  var date = moment("2018-01-01");
+
+  getHolydays(date);
+
+
+
+
+
 });
