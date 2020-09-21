@@ -78,7 +78,7 @@ $(document).ready(function () {
 
   $("#prev").click(function () {
     if ($("h1").attr("data-month") == "01") {
-      alert("errore, si può navigare esclusivamente nel 2018");
+      alert("errore!!! \nsi può navigare esclusivamente nel 2018");
     } else {
       date = date.subtract(1, "months");
       getHolydays(date);
@@ -87,7 +87,7 @@ $(document).ready(function () {
 
   $("#next").click(function () {
     if ($("h1").attr("data-month") == "12") {
-      alert("errore, si può navigare esclusivamente nel 2018");
+      alert("errore!!! \nsi può navigare esclusivamente nel 2018");
     } else {
       date = date.add(1, "months");
       getHolydays(date);
