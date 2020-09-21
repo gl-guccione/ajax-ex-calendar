@@ -13,11 +13,16 @@
 function printCalendar(holidays, date) {
 
   $("h1").text(date.format("MMMM YYYY"));
+  $("h1").attr("data-month", date.format("MM"));
 
   var source = $("#calendar__days-template").html();
   var template = Handlebars.compile(source);
 
   var numDays = date.daysInMonth();
+
+  console.log(date.format("DD"));
+  date.date(1);
+  $(".calendar__days").html("");
 
   for (var i = 0; i < numDays; i++) {
     var context = {
@@ -30,7 +35,9 @@ function printCalendar(holidays, date) {
     var html = template(context);
     $(".calendar__days").append(html);
 
-    date.add(1, 'days');
+    if (date.format("DD") != numDays) {
+      date.add(1, 'days');
+    }
   }
 
   for (var i = 0; i < holidays.length; i++) {
@@ -69,8 +76,22 @@ $(document).ready(function () {
 
   getHolydays(date);
 
+  $("#prev").click(function () {
+    if ($("h1").attr("data-month") == "01") {
+      alert("errore, si può navigare esclusivamente nel 2018");
+    } else {
+      date = date.subtract(1, "months");
+      getHolydays(date);
+    }
+  });
 
-
-
+  $("#next").click(function () {
+    if ($("h1").attr("data-month") == "12") {
+      alert("errore, si può navigare esclusivamente nel 2018");
+    } else {
+      date = date.add(1, "months");
+      getHolydays(date);
+    }
+  });
 
 });
