@@ -13,10 +13,10 @@
 
 .calendar__days {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  filter: drop-shadow(1px 1px 0px #c6c6c6);
   border-top: 1px solid #c6c6c6;
   border-left: 1px solid #c6c6c6;
+  grid-template-columns: repeat(7, 1fr);
+  filter: drop-shadow(1px 1px 0px #c6c6c6);
 }
 
 .calendar__day {
@@ -24,8 +24,8 @@
   padding: 15px;
   list-style: none;
   text-align: center;
-  background-color: #fff;
   border: 1px solid #c6c6c6;
+  background-color: #fff;
 }
 
 .calendar__holiday {
@@ -63,6 +63,21 @@
 
 #today:hover {
   background-color: #f1f3f4;
+}
+
+.days-of-week {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1340px;
+  padding-bottom: 8px;
+  text-decoration: underline;
+}
+
+.days-of-week .day-of-week {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

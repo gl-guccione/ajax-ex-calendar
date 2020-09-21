@@ -23,7 +23,35 @@ function printCalendar(holidays, date) {
   var numDays = date.daysInMonth();
 
   date.date(1);
+
   $(".calendar__days").html("");
+
+  var dayOfWeek = date.day();
+  var htmlLi = "<li class=\"calendar__day\"></li>";
+
+  if (dayOfWeek == 0) {
+    for (var i = 0; i < 6; i++) {
+      $(".calendar__days").append(htmlLi);
+    }
+  } else if (dayOfWeek == 2) {
+    $(".calendar__days").append(htmlLi);
+  } else if (dayOfWeek == 3) {
+    for (var i = 0; i < 2; i++) {
+      $(".calendar__days").append(htmlLi);
+    }
+  } else if (dayOfWeek == 4) {
+    for (var i = 0; i < 3; i++) {
+      $(".calendar__days").append(htmlLi);
+    }
+  } else if (dayOfWeek == 5) {
+    for (var i = 0; i < 4; i++) {
+      $(".calendar__days").append(htmlLi);
+    }
+  } else if (dayOfWeek == 6) {
+    for (var i = 0; i < 5; i++) {
+      $(".calendar__days").append(htmlLi);
+    }
+  }
 
   for (var i = 0; i < numDays; i++) {
     var context = {
