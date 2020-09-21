@@ -10,6 +10,8 @@
 
 // print all the days in the month of jenuary
 
+// functions
+
 function printCalendar(holidays, date) {
 
   $("h1").text(date.format("MMMM YYYY"));
@@ -49,24 +51,37 @@ function getHolydays(date) {
   var month = date.get("month");
   var year = date.get("year");
 
-  $.ajax(
-    {
-      "url": "https://flynn.boolean.careers/exercises/api/holidays",
-      "data": {
-        "year": year,
-        "month": month,
-      },
-      "method": "GET",
-      "success": function (data, state) {
-        printCalendar(data.response, date);
-      },
-      "error": function (request, state, errors) {
-        alert("error");
+  if (arrayMonths[month] == undefined) {
+    $.ajax(
+      {
+        "url": "https://flynn.boolean.careers/exercises/api/holidays",
+        "data": {
+          "year": year,
+          "month": month,
+        },
+        "method": "GET",
+        "success": function (data, state) {
+          arrayMonths[month] = data.response;
+          console.log("sto facendo una chiamata AJAX per il mese " + (month + 1));
+          printCalendar(data.response, date);
+        },
+        "error": function (request, state, errors) {
+          alert("error");
+        }
       }
-    }
-  );
+    );
+  } else {
+    console.log("NON sto facendo una chiamata AJAX per il mese " + (month + 1) + " , ma lo sto prendendo dall'array in cui ho salvato le risposte del server!");
+    printCalendar(arrayMonths[month], date);
+  }
+
+
 }
 
+
+// script
+
+var arrayMonths = [];
 
 $(document).ready(function () {
 
