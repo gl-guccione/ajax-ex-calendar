@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 .calendar {
@@ -12,28 +13,28 @@
 
 .calendar__days {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 120px);
-  grid-gap: 2px;
-  background-color: #c6c6c6;
   border: 2px solid #c6c6c6;
+  background-color: #c6c6c6;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 2px;
 }
 
 .calendar__day {
-  list-style: none;
+  height: 120px;
   padding: 15px;
+  list-style: none;
   text-align: center;
   background-color: #fff;
 }
 
 .calendar__holiday {
   width: 100%;
-  background-color: red;
   margin-top: 10px;
   padding: 7px 0;
   color: #fff;
-  font-weight: bold;
   border-radius: 6px;
+  background-color: red;
+  font-weight: bold;
 }
 
 .header {
@@ -44,6 +45,23 @@
 
 .header > * {
   margin: 0 15px;
+}
+
+#today,
+#prev,
+#next {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#today {
+  padding: 5px 18px;
+  border: 1px solid #c6c6c6;
+  border-radius: 4px;
+}
+
+#today:hover {
+  background-color: #f1f3f4;
 }
 
 /*# sourceMappingURL=style.css.map */

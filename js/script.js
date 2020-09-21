@@ -20,7 +20,6 @@ function printCalendar(holidays, date) {
 
   var numDays = date.daysInMonth();
 
-  console.log(date.format("DD"));
   date.date(1);
   $(".calendar__days").html("");
 
@@ -74,6 +73,13 @@ $(document).ready(function () {
   var date = moment("2018-01-01");
 
   getHolydays(date);
+
+  $("#today").click(function () {
+
+    date = moment().year("2018");
+    getHolydays(date);
+
+  });
 
   $("#prev").click(function () {
     if ($("h1").attr("data-month") == "01") {
