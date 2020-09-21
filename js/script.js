@@ -41,8 +41,7 @@ function printCalendar(holidays, date) {
   }
 
   for (var i = 0; i < holidays.length; i++) {
-    $(".calendar__day[data-date=\"" + holidays[i].date + "\"] .calendar__holiday").text(holidays[i].name);
-    $(".calendar__day[data-date=\"" + holidays[i].date + "\"]").addClass("holiday");
+    $(".calendar__day[data-date=\"" + holidays[i].date + "\"] .holiday").text(holidays[i].name).addClass("calendar__holiday");
   }
 };
 

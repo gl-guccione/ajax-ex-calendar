@@ -7,6 +7,8 @@
     <title>ajax-ex-calendar</title>
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- add moment.js -->
     <script src="https://momentjs.com/downloads/moment.min.js" charset="utf-8"></script>
     <!-- add jQuery -->
@@ -17,17 +19,18 @@
   <body>
 
     <div class="calendar">
-      <div class="buttons">
-        <span id="prev">prev</span>
-        <span id="next">succ</span>
+      <div class="header">
+        <div id="today">OGGI</div>
+        <div id="prev"><i class="fas fa-arrow-circle-left"></i></div>
+        <div id="next"><i class="fas fa-arrow-circle-right"></i></div>
+        <h1></h1>
       </div>
-      <h1></h1>
       <ul class="calendar__days"></ul>
     </div>
 
     <!-- handlebars - template -->
     <script id="calendar__days-template" type="text/x-handlebars-template">
-      <li class="calendar__day" data-date="{{YYYY}}-{{MM}}-{{DD}}">{{day}} {{month}} <span class="calendar__holiday"></span></li>
+      <li class="calendar__day" data-date="{{YYYY}}-{{MM}}-{{DD}}">{{day}} {{month}} <div class="holiday"></div></li>
     </script>
     <!-- /handlebars - template -->
 
