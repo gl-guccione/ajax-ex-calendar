@@ -28,12 +28,11 @@
   &__days {
     display: grid;
 
-    border: 2px solid #c6c6c6;
-    background-color: #c6c6c6;
-
     grid-template-columns: repeat(7, 1fr);
-    // grid-template-rows: repeat(5, 120px);
-    grid-gap: 2px;
+
+    filter: drop-shadow(1px 1px 0px #c6c6c6);
+    border-top: 1px solid #c6c6c6;
+    border-left: 1px solid #c6c6c6;
   }
   &__day {
     height: 120px;
@@ -44,6 +43,8 @@
     text-align: center;
 
     background-color: #fff;
+    border: 1px solid #c6c6c6;
+
   }
   &__holiday {
     width: 100%;
